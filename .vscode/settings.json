@@ -15,5 +15,20 @@
     "idf.portWin": "COM8",
     "idf.pythonBinPathWin": "C:\\Espressif\\python_env\\idf5.1_py3.11_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "C:\\Espressif",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "control.h": "c",
+        "gpio.h": "c",
+        "sdkconfig.h": "c",
+        "esp_err.h": "c",
+        "adc_cali_scheme.h": "c",
+        "adc_cali.h": "c",
+        "adc_cali_schemes.h": "c",
+        "measure.h": "c",
+        "freertos.h": "c",
+        "task.h": "c",
+        "freertosconfig.h": "c",
+        "projdefs.h": "c",
+        "portable.h": "c"
+    }
 }
