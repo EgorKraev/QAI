@@ -1,4 +1,12 @@
+/**
+ * @file
+ * @brief HAL for control peref
+ */
+
+
+
 #pragma once
+
 
 #include <stdio.h>
 #include "driver/ledc.h"

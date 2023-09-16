@@ -1,4 +1,5 @@
 #include "inc/control.h"
+#include "inc/hardconfig.h"
 
 
 
@@ -25,7 +26,7 @@ esp_err_t PWM_channel_config(){
         .channel        = LEDC_CHANNEL_0,
         .timer_sel      = LEDC_TIMER,
         .intr_type      = LEDC_INTR_DISABLE,
-        .gpio_num       = GPIO_NUM_40,
+        .gpio_num       = MOTOR_1_PIN,
         .duty           = 0, // Set duty to 0%
         .hpoint         = 0
     };
@@ -36,7 +37,7 @@ esp_err_t PWM_channel_config(){
         .channel        = LEDC_CHANNEL_1,
         .timer_sel      = LEDC_TIMER,
         .intr_type      = LEDC_INTR_DISABLE,
-        .gpio_num       = GPIO_NUM_8,
+        .gpio_num       = MOTOR_2_PIN,
         .duty           = 0, // Set duty to 0%
         .hpoint         = 0
     };
@@ -47,7 +48,7 @@ esp_err_t PWM_channel_config(){
         .channel        = LEDC_CHANNEL_2,
         .timer_sel      = LEDC_TIMER,
         .intr_type      = LEDC_INTR_DISABLE,
-        .gpio_num       = GPIO_NUM_3,
+        .gpio_num       = MOTOR_3_PIN,
         .duty           = 0, // Set duty to 0%
         .hpoint         = 0
     };
@@ -58,7 +59,7 @@ esp_err_t PWM_channel_config(){
         .channel        = LEDC_CHANNEL_3,
         .timer_sel      = LEDC_TIMER,
         .intr_type      = LEDC_INTR_DISABLE,
-        .gpio_num       = GPIO_NUM_36,
+        .gpio_num       = MOTOR_4_PIN,
         .duty           = 0, // Set duty to 0%
         .hpoint         = 0
     };
@@ -94,11 +95,11 @@ esp_err_t setMotor_spd(uint8_t nunberMotor, uint16_t spd){
 }
 
 void GPIO_init(){
-     gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
+     gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
 }
 void onLED(){
-     gpio_set_level(GPIO_NUM_2,1);
+     gpio_set_level(LED_PIN,1);
 }
 void offLED(){
-    gpio_set_level(GPIO_NUM_2,0);
+    gpio_set_level(LED_PIN,0);
 }

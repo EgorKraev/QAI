@@ -1,12 +1,7 @@
 #include "inc/measure.h"
+#include "inc/hardconfig.h"
 
 
-// Average measure filter
-#define NUM_READ 8
-
-#define voltage_chanel ADC_CHANNEL_8
-#define current_chanel ADC_CHANNEL_9
-#define ampl_k 51
 static const char *TAG = "Measure part >>>";
 static int adc_raw[2][10];
 static int voltage[2][10];
