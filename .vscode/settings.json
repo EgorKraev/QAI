@@ -30,6 +30,14 @@
         "freertosconfig.h": "c",
         "projdefs.h": "c",
         "portable.h": "c",
-        "i2c.h": "c"
+        "i2c.h": "c",
+        "power_distribution.h": "c",
+        "stabilizer.h": "c",
+        "esp_log.h": "c",
+        "hardconfig.h": "c",
+        "estimator.h": "c",
+        "stabilizer_types.h": "c",
+        "log.h": "c",
+        "pid.h": "c"
     }
 }

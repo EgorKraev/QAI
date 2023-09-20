@@ -8,6 +8,8 @@
 #define LEDC_DUTY_RES           LEDC_TIMER_13_BIT // Set duty resolution to 13 bits
 #define LEDC_FREQUENCY          (2500) // Frequency in Hertz. Set frequency at 5 kHz
 
+static const char *TAG = "Control driver >>>";
+
 esp_err_t PWM_channel_config(){
     // PWM timer configuration
     ledc_timer_config_t ledc_timer = {
@@ -67,9 +69,13 @@ esp_err_t PWM_channel_config(){
         && ledc_channel_config(&ledc_channel_1) 
         && ledc_channel_config(&ledc_channel_2) 
         && ledc_channel_config(&ledc_channel_3)) == ESP_OK){
+            ESP_LOGI(TAG, "Motors PWM channels success config");
             return ESP_OK;
         }
-    else return ESP_ERR_INVALID_STATE;
+    else {
+        ESP_LOGI(TAG, "Motors PWM channels NOT config");
+        return ESP_ERR_INVALID_STATE;
+    } 
 }
 
 
@@ -93,6 +99,12 @@ esp_err_t setMotor_spd(uint8_t nunberMotor, uint16_t spd){
         break;
     }
 }
+
+ void motorsStop(){
+    for(int i = 1; i<5; i++){
+        setMotor_spd(i,0);
+    }
+ }
 
 void GPIO_init(){
      gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT);
